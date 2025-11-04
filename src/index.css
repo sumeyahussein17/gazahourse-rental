@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+
+/* homesection, #rooot {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: black;
+  overflow-x: hidden; /* prevents white scroll sides */
