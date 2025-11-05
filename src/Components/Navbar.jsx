@@ -4,10 +4,10 @@ import { Menu, X, ChevronDown } from "lucide-react";
 
 const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
-  const [dropdown, setDropdown] = useState({ 
-    houses: false, 
-    services: false, 
-    account: false 
+  const [dropdown, setDropdown] = useState({
+    houses: false,
+    services: false,
+    account: false,
   });
 
   const toggleDropdown = (menu) => {
@@ -51,18 +51,18 @@ const Navbar = () => {
             {dropdown.houses && (
               <div className="absolute bg-white rounded-md shadow-md mt-2 w-52 z-50">
                 <Link
-                  to="/houses/family"
+                  to="/houses/familyhouses"
                   className="block px-4 py-2 hover:bg-gray-100 text-gray-700"
                   onClick={closeAllDropdowns}
                 >
                   Family Houses
                 </Link>
                 <Link
-                  to="/houses/single"
+                  to="/houses/singlehouses"
                   className="block px-4 py-2 hover:bg-gray-100 text-gray-700"
                   onClick={closeAllDropdowns}
                 >
-                  Single Rooms
+                  Single Houses
                 </Link>
                 <Link
                   to="/houses/apartments"
@@ -103,14 +103,14 @@ const Navbar = () => {
                   Booking Assistance
                 </Link>
                 <Link
-                  to="/services/maintenance"
+                  to="/services/housemaintenance"
                   className="block px-4 py-2 hover:bg-gray-100 text-gray-700"
                   onClick={closeAllDropdowns}
                 >
                   House Maintenance
                 </Link>
                 <Link
-                  to="/services/management"
+                  to="/services/rentalmanagement"
                   className="block px-4 py-2 hover:bg-gray-100 text-gray-700"
                   onClick={closeAllDropdowns}
                 >
@@ -153,7 +153,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Toggle Button */}
+        {/* Mobile Toggle */}
         <button
           className="md:hidden text-gray-700"
           onClick={() => setMobileMenu(!mobileMenu)}
@@ -182,7 +182,7 @@ const Navbar = () => {
             </Link>
           ))}
 
-          {/* Mobile dropdowns */}
+          {/* Houses Dropdown */}
           <div className="border-t">
             <button
               onClick={() => toggleDropdown("houses")}
@@ -192,13 +192,32 @@ const Navbar = () => {
             </button>
             {dropdown.houses && (
               <div className="pl-6 bg-gray-50">
-                <Link to="/houses/family" className="block px-4 py-2 hover:bg-gray-100" onClick={closeAllDropdowns}>Family Houses</Link>
-                <Link to="/houses/single" className="block px-4 py-2 hover:bg-gray-100" onClick={closeAllDropdowns}>Single Rooms</Link>
-                <Link to="/houses/apartments" className="block px-4 py-2 hover:bg-gray-100" onClick={closeAllDropdowns}>Apartments</Link>
+                <Link
+                  to="/houses/familyhouses"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                  onClick={closeAllDropdowns}
+                >
+                  Family Houses
+                </Link>
+                <Link
+                  to="/houses/singlehouses"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                  onClick={closeAllDropdowns}
+                >
+                  Single Houses
+                </Link>
+                <Link
+                  to="/houses/apartments"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                  onClick={closeAllDropdowns}
+                >
+                  Apartments
+                </Link>
               </div>
             )}
           </div>
 
+          {/* Services Dropdown */}
           <div className="border-t">
             <button
               onClick={() => toggleDropdown("services")}
@@ -208,13 +227,32 @@ const Navbar = () => {
             </button>
             {dropdown.services && (
               <div className="pl-6 bg-gray-50">
-                <Link to="/services/booking" className="block px-4 py-2 hover:bg-gray-100" onClick={closeAllDropdowns}>Booking Assistance</Link>
-                <Link to="/services/maintenance" className="block px-4 py-2 hover:bg-gray-100" onClick={closeAllDropdowns}>House Maintenance</Link>
-                <Link to="/services/management" className="block px-4 py-2 hover:bg-gray-100" onClick={closeAllDropdowns}>Rental Management</Link>
+                <Link
+                  to="/services/booking"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                  onClick={closeAllDropdowns}
+                >
+                  Booking Assistance
+                </Link>
+                <Link
+                  to="/services/housemaintenance"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                  onClick={closeAllDropdowns}
+                >
+                  House Maintenance
+                </Link>
+                <Link
+                  to="/services/rentalmanagement"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                  onClick={closeAllDropdowns}
+                >
+                  Rental Management
+                </Link>
               </div>
             )}
           </div>
 
+          {/* Account Dropdown */}
           <div className="border-t">
             <button
               onClick={() => toggleDropdown("account")}
@@ -224,8 +262,20 @@ const Navbar = () => {
             </button>
             {dropdown.account && (
               <div className="pl-6 bg-gray-50">
-                <Link to="/login" className="block px-4 py-2 hover:bg-gray-100" onClick={closeAllDropdowns}>Login</Link>
-                <Link to="/register" className="block px-4 py-2 hover:bg-gray-100" onClick={closeAllDropdowns}>Register</Link>
+                <Link
+                  to="/login"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                  onClick={closeAllDropdowns}
+                >
+                  Login
+                </Link>
+                <Link
+                  to="/register"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                  onClick={closeAllDropdowns}
+                >
+                  Register
+                </Link>
               </div>
             )}
           </div>

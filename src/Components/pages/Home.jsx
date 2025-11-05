@@ -51,7 +51,7 @@ const ValueDropdown = ({ title, description }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="bg-gray-100 p-6 rounded-xl shadow-md hover:shadow-lg transition-all">
+    <div className="bg-gray-100 p-6  rounded-xl shadow-md hover:shadow-lg transition-all">
       <div
         className="flex justify-between items-center cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
@@ -70,7 +70,7 @@ const Home = () => {
   return (
     <div className="pt-16">
       {/* HERO SECTION */}
-      <section className="min-h-screen flex flex-col md:flex-row justify-between items-center px-10 md:px-20 py-16 bg-black text-white">
+      <section className="min-h-screen flex flex-col md:flex-row justify-between items-center px-10 md:px-20 py-16 bg-black  text-white">
         <div className="flex-1 space-y-6">
           <h1 className="text-5xl md:text-6xl font-bold leading-tight">
             Discover <br />
