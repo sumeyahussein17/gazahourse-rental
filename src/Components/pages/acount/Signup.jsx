@@ -5,6 +5,9 @@ const Signup = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
+    idNumber: "",
+    location: "",
+    role: "",
     password: "",
     confirmPassword: "",
   });
@@ -23,11 +26,13 @@ const Signup = () => {
       return;
     }
 
-    // You can later connect this with backend (API call)
     setMessage("Signup successful! Welcome to Garissa Rentals.");
     setFormData({
       fullName: "",
       email: "",
+      idNumber: "",
+      location: "",
+      role: "",
       password: "",
       confirmPassword: "",
     });
@@ -50,6 +55,7 @@ const Signup = () => {
         )}
 
         <form onSubmit={handleSubmit} className="space-y-5">
+          {/* Full Name */}
           <div>
             <label className="block text-gray-700 font-medium mb-2">
               Full Name
@@ -65,6 +71,7 @@ const Signup = () => {
             />
           </div>
 
+          {/* Email */}
           <div>
             <label className="block text-gray-700 font-medium mb-2">
               Email Address
@@ -80,6 +87,57 @@ const Signup = () => {
             />
           </div>
 
+          {/* ID Number */}
+          <div>
+            <label className="block text-gray-700 font-medium mb-2">
+              ID Number
+            </label>
+            <input
+              type="text"
+              name="idNumber"
+              value={formData.idNumber}
+              onChange={handleChange}
+              placeholder="Enter your national ID number"
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 outline-none"
+            />
+          </div>
+
+          {/* Location */}
+          <div>
+            <label className="block text-gray-700 font-medium mb-2">
+              Location
+            </label>
+            <input
+              type="text"
+              name="location"
+              value={formData.location}
+              onChange={handleChange}
+              placeholder="Enter your location (e.g., Garissa Town)"
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 outline-none"
+            />
+          </div>
+
+          {/* Role */}
+          <div>
+            <label className="block text-gray-700 font-medium mb-2">
+              Role
+            </label>
+            <select
+              name="role"
+              value={formData.role}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-400 outline-none"
+            >
+              <option value="">Select your role</option>
+              <option value="tenant">Tenant</option>
+              <option value="landlord">Landlord</option>
+            </select>
+          </div>
+
+          {/* Password */}
           <div>
             <label className="block text-gray-700 font-medium mb-2">
               Password
@@ -95,6 +153,7 @@ const Signup = () => {
             />
           </div>
 
+          {/* Confirm Password */}
           <div>
             <label className="block text-gray-700 font-medium mb-2">
               Confirm Password
@@ -110,6 +169,7 @@ const Signup = () => {
             />
           </div>
 
+          {/* Submit Button */}
           <button
             type="submit"
             className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition duration-200"
@@ -120,10 +180,7 @@ const Signup = () => {
 
         <p className="text-center text-gray-500 text-sm mt-5">
           Already have an account?{" "}
-          <Link
-            to="/login"
-            className="text-blue-600 hover:underline font-medium"
-          >
+          <Link to="/login" className="text-blue-600 hover:underline font-medium">
             Login here
           </Link>
         </p>
